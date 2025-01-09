@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #ff6347;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      background-color: #ff6347;
+      transition: 0.3s;
+    }
+
+    .section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+      color: #ff6347;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .menu-item {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      width: 250px;
+      text-align: left;
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Welcome to Our Restaurant</h1>
+  <p>Delicious food for everyone!</p>
+</header>
+
+<nav>
+  <a href="#burgers">Burgers</a>
+  <a href="#sandwiches">Sandwiches</a>
+  <a href="#pizza">Pizza</a>
+  <a href="#drinks">Drinks</a>
+  <a href="#desserts">Desserts</a>
+</nav>
+
+<section id="burgers" class="section">
+  <h2>Burgers</h2>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="cheeseburger.jpg" alt="Cheeseburger">
+      <h3>Cheeseburger</h3>
+      <p>Melted cheese, pickles, and onions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sandwiches" class="section">
+  <h2>Sandwiches</h2>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="sandwich.jpg" alt="Sandwich">
+      <h3>Club Sandwich</h3>
+      <p>Layers of Turkey, ham, and bacon.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pizza" class="section">
+  <h2>Pizza</h2>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="pizza.jpg" alt="Pizza">
+      <h3>Margherita</h3>
+      <p>Classic pizza with fresh basil and mozzarella.</p>
+    </div>
+  </div>
+</section>
+
+<section id="drinks" class="section">
+  <h2>Drinks</h2>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="soda.jpg" alt="Soda">
+      <h3>Soft Drinks</h3>
+      <p>Refreshing and chilled soda options.</p>
+    </div>
+  </div>
+</section>
+
+<section id="desserts" class="section">
+  <h2>Desserts</h2>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="cake.jpg" alt="Cake">
+      <h3>Chocolate Cake</h3>
+      <p>Rich and moist chocolate layers.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Utotech. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
