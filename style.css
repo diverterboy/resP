@@ -3,11 +3,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: yellow;
+    background-color: red;
 }
 
 header {
-    background-color: blue;
+    background-color: green;
     color: white;
     padding: 20px 10px;
     text-align: center;
@@ -16,11 +16,11 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: white;
 }
 
 nav a {
-    color: white;
+    color: black;
     padding: 14px 20px;
     text-decoration: none;
     text-transform: uppercase;
@@ -72,3 +72,7 @@ footer {
     width: 100%;
 }
 
+#allah {
+    font-size: 50px;
+
+}
