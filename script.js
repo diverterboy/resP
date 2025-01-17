@@ -8,7 +8,6 @@ function loadsPizza() {
             const myResponse = (JSON.parse(xhrPizza.responseText))
             for (let i = 0; i < myResponse.length; i++) {
                 let res = myResponse[i]
-                console.log(res)
                 let d = `
                     <div class="menu-item">
       <img src="${res.url}" alt="Pizza">
