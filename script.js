@@ -11,7 +11,7 @@ function loadsPizza() {
                 let d = `
                     <div class="menu-item">
       <img src="${res.url}" alt="Pizza">
-      <h3>Margherita</h3>
+      <h3>${res.name}</h3>
       <p>Classic pizza with fresh basil, mozzarella</p>
     </div>
             `
