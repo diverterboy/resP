@@ -1,3 +1,37 @@
+import foods from "./foods.js"; // do not forget to add  ".js"
+
+
+function loadsSandwiches(){
+    const xhrSandwiches=new XMLHttpRequest()
+    xhrSandwiches.open("Get","https://utotech.ir/rest/pizza/midgaurdpizza.php",true)
+    xhrSandwiches.onload=function (){
+        if (xhrSandwiches.status===200){
+            const myResponse =(JSON.parse(xhrSandwiches.responseText))
+            let pizzas = myResponse.map(obj=>new Foods (obj.foodname, obj.price, obj.ingredients)) ;
+            console.log(pizzas)
+            for (let i = 0; i < myResponse.length; i++) {
+                let res=myResponse[i]
+                let food=new food(res.name,res.price,res.url)
+                let d =`
+<div class="row" id="madar">
+<div class="col-lg-3 col-md-6">
+<div class="coffee_img"><img src="${food.url}"></div>
+<h3 class="types_text">${food.name}</h3>
+<p class="looking_text">${food.price}</p>
+<div class="read_bt"><a href="#">Read More</a></div>
+</div>
+ 
+</div>
+`
+                madar.innerHTML=madar.innerHTML+d
+
+            }
+        }
+    }
+    xhrSandwiches.send()
+
+}
+loadsSandwiches()
 const madarPizza = document.querySelector("#madarPizza")
 function loadsPizza() {
     const xhrPizza = new XMLHttpRequest()
@@ -25,4 +59,11 @@ function loadsPizza() {
 }
 
 loadsPizza()
+
+const pizza = new foods("pizza" , 1009 , "cheese")
+
+
+console.log(pizza)
+
+
 
