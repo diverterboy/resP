@@ -1,18 +1,18 @@
-import foods from "./foods.js"; // do not forget to add  ".js"
+import foods from "./Foods.js"; // do not forget to add  ".js"
 
 
-function loadsSandwiches(){
-    const xhrSandwiches=new XMLHttpRequest()
-    xhrSandwiches.open("Get","https://utotech.ir/rest/pizza/midgaurdpizza.php",true)
-    xhrSandwiches.onload=function (){
-        if (xhrSandwiches.status===200){
-            const myResponse =(JSON.parse(xhrSandwiches.responseText))
-            let pizzas = myResponse.map(obj=>new Foods (obj.foodname, obj.price, obj.ingredients)) ;
+function loadsSandwiches() {
+    const xhrSandwiches = new XMLHttpRequest()
+    xhrSandwiches.open("Get", "https://utotech.ir/rest/pizza/midgaurdpizza.php", true)
+    xhrSandwiches.onload = function () {
+        if (xhrSandwiches.status === 200) {
+            const myResponse = (JSON.parse(xhrSandwiches.responseText))
+            let pizzas = myResponse.map(obj => new Foods(obj.foodname, obj.price, obj.ingredients));
             console.log(pizzas)
             for (let i = 0; i < myResponse.length; i++) {
-                let res=myResponse[i]
-                let food=new food(res.name,res.price,res.url)
-                let d =`
+                let res = myResponse[i]
+                let food = new food(res.name, res.price, res.url)
+                let d = `
 <div class="row" id="madar">
 <div class="col-lg-3 col-md-6">
 <div class="coffee_img"><img src="${food.url}"></div>
@@ -23,7 +23,7 @@ function loadsSandwiches(){
  
 </div>
 `
-                madar.innerHTML=madar.innerHTML+d
+                madar.innerHTML = madar.innerHTML + d
 
             }
         }
@@ -31,8 +31,10 @@ function loadsSandwiches(){
     xhrSandwiches.send()
 
 }
+
 loadsSandwiches()
 const madarPizza = document.querySelector("#madarPizza")
+
 function loadsPizza() {
     const xhrPizza = new XMLHttpRequest()
     xhrPizza.open("GET", "https://utotech.ir/rest/sss.php", true)
@@ -42,10 +44,11 @@ function loadsPizza() {
             const myResponse = (JSON.parse(xhrPizza.responseText))
             for (let i = 0; i < myResponse.length; i++) {
                 let res = myResponse[i]
+                console.log(res)
                 let d = `
                     <div class="menu-item">
       <img src="${res.url}" alt="Pizza">
-      <h3>${res.name}</h3>
+      <h3>Margherita</h3>
       <p>Classic pizza with fresh basil, mozzarella</p>
     </div>
             `
@@ -60,7 +63,7 @@ function loadsPizza() {
 
 loadsPizza()
 
-const pizza = new foods("pizza" , 1009 , "cheese")
+const pizza = new foods("pizza", 1009, "cheese")
 
 
 console.log(pizza)
