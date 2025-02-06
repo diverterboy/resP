@@ -1,9 +1,30 @@
-import Foods from "./Foods.js"; // do not forget to add  ".js"
+import Foods from "./Foods.js";
 const madarSandwich = document.querySelector("#madarSandwich")
 const maderDesserts = document.querySelector("#maderDesserts")
-function loadsSandwiches() {
+const madarPizza = document.querySelector("#madarPizza")
+const madarDrinks = document.querySelector("#madarDrinks")
+const madarBurgers = document.querySelector("#madarBurgers")
+const resName= localStorage.getItem("res")
+
+    function getUrls(res){
+        switch (resName){
+            case "پیتزا سی تو":
+                return "pizzaC2"
+            case "مش دونالد":
+                return "mash donald"
+            case "کبابی روناک":
+                return "kababironak"
+            case "پیتزا دادلی":
+                return "pizzaDadli"
+
+        }
+    }
+
+
+
+function loadsSandwiches(resName) {
     const xhrSandwiches = new XMLHttpRequest()
-    xhrSandwiches.open("Get", "https://food.utotech.ir/getSandwiches.php", true)
+    xhrSandwiches.open("Get", "https://food.utotech.ir/"+resName+"/getSandwiches.php", true)
     xhrSandwiches.onload = function () {
         if (xhrSandwiches.status === 200) {
             const myResponse = (JSON.parse(xhrSandwiches.responseText))
@@ -28,16 +49,9 @@ function loadsSandwiches() {
     xhrSandwiches.send()
 
 }
-
-
-const madarPizza = document.querySelector("#madarPizza")
-const madarDrinks = document.querySelector("#madarDrinks")
-const madarBurgers = document.querySelector("#madarBurgers")
-
-
-function loadsPizzas() {
+function loadsPizzas(resName) {
     const xhrPizza = new XMLHttpRequest()
-    xhrPizza.open("GET", "https://food.utotech.ir/getPizzas.php", true)
+    xhrPizza.open("GET", "https://food.utotech.ir/"+resName+"/getPizzas.php", true)
     xhrPizza.onload = function () {
 
         if (xhrPizza.status === 200) {
@@ -60,9 +74,9 @@ function loadsPizzas() {
     xhrPizza.send()
 
 }
-function loadDrinks() {
+function loadDrinks(resName) {
     const xhrdrinks = new XMLHttpRequest()
-    xhrdrinks.open("GET", "https://food.utotech.ir/getDrinks.php", true)
+    xhrdrinks.open("GET", "https://food.utotech.ir/"+resName+"/getDrinks.php", true)
     xhrdrinks.onload = function () {
 
         if (xhrdrinks.status === 200) {
@@ -85,9 +99,9 @@ function loadDrinks() {
     xhrdrinks.send()
 
 }
-function loadsDesserts() {
+function loadsDesserts(resName) {
     const xhrDesserts= new XMLHttpRequest()
-    xhrDesserts.open("GET", "https://food.utotech.ir/getDesserts.php", true)
+    xhrDesserts.open("GET", "https://food.utotech.ir/"+resName+"/getDesserts.php", true)
     xhrDesserts.onload = function () {
 
         if (xhrDesserts.status === 200) {
@@ -110,9 +124,9 @@ function loadsDesserts() {
     xhrDesserts.send()
 
 }
-function loadBurgers() {
+function loadBurgers(resName) {
     const xhrBurgers = new XMLHttpRequest()
-    xhrBurgers.open("GET", "https://food.utotech.ir/getBurgers.php", true)
+    xhrBurgers.open("GET", "https://food.utotech.ir/"+resName+"/getBurgers.php", true)
     xhrBurgers.onload = function () {
 
         if (xhrBurgers.status === 200) {
@@ -137,11 +151,11 @@ function loadBurgers() {
 }
 
 
-loadBurgers()
-loadsPizzas()
-loadsSandwiches()
-loadDrinks()
-loadsDesserts()
+loadBurgers(getUrls(resName))
+loadsPizzas(getUrls(resName))
+loadsSandwiches(getUrls(resName))
+loadDrinks(getUrls(resName))
+loadsDesserts(getUrls(resName))
 
 
 
