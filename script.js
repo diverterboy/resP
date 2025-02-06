@@ -36,6 +36,7 @@ function loadsSandwiches() {
 
 const madarPizza = document.querySelector("#madarPizza")
 const madarDrinks = document.querySelector("#madarDrinks")
+const madarBurgers = document.querySelector("#madarBurgers")
 
 function loadsPizzas() {
     const xhrPizza = new XMLHttpRequest()
@@ -112,6 +113,37 @@ function loadsDesserts() {
     xhrDesserts.send()
 
 }
+
+
+
+function loadBurgers() {
+    const xhrBurgers = new XMLHttpRequest()
+    xhrBurgers.open("GET", "https://food.utotech.ir/getBurgers.php", true)
+    xhrBurgers.onload = function () {
+
+        if (xhrBurgers.status === 200) {
+            const myResponse = (JSON.parse(xhrBurgers.responseText))
+            let BurgersList = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
+            for (let i = 0; i < BurgersList.length; i++) {
+                let Burgers = BurgersList[i]
+                let d = `
+                    <div class="menu-item">
+      <img src="${Burgers.url}" alt="Burgers">
+      <h3>${Burgers.name}</h3>
+      <p>${Burgers.price}</p>
+    </div>
+            `
+                madarBurgers.innerHTML = madarBurgers.innerHTML + d
+
+            }
+        }
+    }
+    xhrBurgers.send()
+
+}
+
+
+loadBurgers()
 loadsPizzas()
 loadsSandwiches()
 loadDrinks()

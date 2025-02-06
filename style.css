@@ -3,11 +3,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: red;
+    background-color: lightpink;
 }
 
 header {
-    background-color: green;
+    background-color: mediumpurple;
     color: white;
     padding: 20px 10px;
     text-align: center;
@@ -16,7 +16,7 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: grey;
 }
 
 nav a {
