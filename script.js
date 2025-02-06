@@ -1,6 +1,5 @@
 import Foods from "./Foods.js"; // do not forget to add  ".js"
 const madarSandwich = document.querySelector("#madarSandwich")
-const maderDesserts = document.querySelector("#maderDesserts")
 function loadsSandwiches() {
     const xhrSandwiches = new XMLHttpRequest()
     xhrSandwiches.open("Get", "https://food.utotech.ir/getSandwiches.php", true)
@@ -33,8 +32,9 @@ function loadsSandwiches() {
 
 }
 
-console.log(maderDesserts)
+
 const madarPizza = document.querySelector("#madarPizza")
+const madarDrinks = document.querySelector("#madarDrinks")
 
 function loadsPizzas() {
     const xhrPizza = new XMLHttpRequest()
@@ -61,35 +61,35 @@ function loadsPizzas() {
     xhrPizza.send()
 
 }
+function loadDrinks() {
+    const xhrdrinks = new XMLHttpRequest()
+    xhrdrinks.open("GET", "https://food.utotech.ir/getDrinks.php", true)
+    xhrdrinks.onload = function () {
 
-loadsPizzas()
-loadsSandwiches()
-
-function loadsDesserts() {
-    const xhrDesserts= new XMLHttpRequest()
-    xhrDesserts.open("GET", "https://food.utotech.ir/getDesserts.php", true)
-    xhrDesserts.onload = function () {
-
-        if (xhrDesserts.status === 200) {
-            const myResponse = (JSON.parse(xhrDesserts.responseText))
-            let ListDesserts = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
-            for (let i = 0; i < ListDesserts.length; i++) {
-                let Desserts = ListDesserts[i]
+        if (xhrdrinks.status === 200) {
+            const myResponse = (JSON.parse(xhrdrinks.responseText))
+            let drinksList = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
+            for (let i = 0; i < drinksList.length; i++) {
+                let drink = drinksList[i]
                 let d = `
                     <div class="menu-item">
-      <img src="${Desserts.url}" alt="Desserts">
-      <h3>${Desserts.name}</h3>
-      <p>${Desserts.price}</p>
+      <img src="${drink.url}" alt="Pizza">
+      <h3>${drink.name}</h3>
+      <p>${drink.price}</p>
     </div>
             `
-                maderDesserts.innerHTML = maderDesserts.innerHTML + d
+                madarDrinks.innerHTML = madarDrinks.innerHTML + d
 
             }
         }
     }
-    xhrDesserts.send()
+    xhrdrinks.send()
 
 }
-loadsDesserts()
+loadsPizzas()
+loadsSandwiches()
+loadDrinks()
+
+
 
 
