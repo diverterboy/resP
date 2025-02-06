@@ -1,5 +1,6 @@
 import Foods from "./Foods.js"; // do not forget to add  ".js"
 const madarSandwich = document.querySelector("#madarSandwich")
+const maderDesserts = document.querySelector("#maderDesserts")
 function loadsSandwiches() {
     const xhrSandwiches = new XMLHttpRequest()
     xhrSandwiches.open("Get", "https://food.utotech.ir/getSandwiches.php", true)
@@ -86,10 +87,35 @@ function loadDrinks() {
     xhrdrinks.send()
 
 }
+function loadsDesserts() {
+    const xhrDesserts= new XMLHttpRequest()
+    xhrDesserts.open("GET", "https://food.utotech.ir/getDesserts.php", true)
+    xhrDesserts.onload = function () {
+
+        if (xhrDesserts.status === 200) {
+            const myResponse = (JSON.parse(xhrDesserts.responseText))
+            let ListDesserts = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
+            for (let i = 0; i < ListDesserts.length; i++) {
+                let Desserts = ListDesserts[i]
+                let d = `
+                    <div class="menu-item">
+      <img src="${Desserts.url}" class="imgs" alt="Desserts">
+      <h3>${Desserts.name}</h3>
+      <p>${Desserts.price}</p>
+    </div>
+            `
+                maderDesserts.innerHTML = maderDesserts.innerHTML + d
+
+            }
+        }
+    }
+    xhrDesserts.send()
+
+}
 loadsPizzas()
 loadsSandwiches()
 loadDrinks()
-
+loadsDesserts()
 
 
 
