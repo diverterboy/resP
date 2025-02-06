@@ -9,8 +9,9 @@ body {
 }
 .restaurant-list li {
     padding: 10px;
-    font-size: 18px;
-    background-color: #ff6347;
+    font-size: 30px;
+    font-family: Aldhabi;
+    background-color: blue;
     color: white;
     margin: 5px;
     cursor: pointer;
