@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+.restaurant-list {
+    list-style: none;
+    padding: 0;
+}
+.restaurant-list li {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #ff6347;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.restaurant-list li:hover {
+    background-color: #e5533d;
+}
