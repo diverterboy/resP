@@ -6,12 +6,12 @@ const madarDrinks = document.querySelector("#madarDrinks")
 const madarBurgers = document.querySelector("#madarBurgers")
 const resName= localStorage.getItem("res")
 
-    function getUrls(res){
+function getUrls(){
         switch (resName){
             case "پیتزا سی تو":
                 return "pizzaC2"
             case "مش دونالد":
-                return "mash donald"
+                return "mashDonald"
             case "کبابی روناک":
                 return "kababironak"
             case "پیتزا دادلی":
@@ -151,11 +151,11 @@ function loadBurgers(resName) {
 }
 
 
-loadBurgers(getUrls(resName))
-loadsPizzas(getUrls(resName))
-loadsSandwiches(getUrls(resName))
-loadDrinks(getUrls(resName))
-loadsDesserts(getUrls(resName))
+loadBurgers(getUrls())
+loadsPizzas(getUrls())
+loadsSandwiches(getUrls())
+loadDrinks(getUrls())
+loadsDesserts(getUrls())
 
 
 
