@@ -3,20 +3,20 @@ const madarSandwich = document.querySelector("#madarSandwich")
 const maderDesserts = document.querySelector("#maderDesserts")
 function loadsSandwiches() {
     const xhrSandwiches = new XMLHttpRequest()
-    xhrSandwiches.open("Get", "", true)
+    xhrSandwiches.open("Get", "https://food.utotech.ir/getSandwiches.php", true)
     xhrSandwiches.onload = function () {
         if (xhrSandwiches.status === 200) {
             const myResponse = (JSON.parse(xhrSandwiches.responseText))
-            let pizzas = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
-            console.log(pizzas)
-            for (let i = 0; i < myResponse.length; i++) {
-                let res = myResponse[i]
+            let sandwichList = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
+
+            for (let i = 0; i < sandwichList.length; i++) {
+                let sandwich = sandwichList[i]
                 let d = `
 <div class="row" id="madar">
 <div class="col-lg-3 col-md-6">
-<div class="coffee_img"><img src="${res.url}"></div>
-<h3 class="types_text">${res.name}</h3>
-<p class="looking_text">${res.price}</p>
+<div class="coffee_img"><img src="${sandwich.url}"></div>
+<h3 class="types_text">${sandwich.name}</h3>
+<p class="looking_text">${sandwich.price}</p>
 <div class="read_bt"><a href="#">Read More</a></div>
 </div>
  
@@ -43,14 +43,14 @@ function loadsPizzas() {
 
         if (xhrPizza.status === 200) {
             const myResponse = (JSON.parse(xhrPizza.responseText))
-            let sandwichList = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
-            for (let i = 0; i < sandwichList.length; i++) {
-                let sandwich = sandwichList[i]
+            let pizzaList = myResponse.map(obj => new Foods(obj.name, obj.price, obj.url));
+            for (let i = 0; i < pizzaList.length; i++) {
+                let pizza = pizzaList[i]
                 let d = `
                     <div class="menu-item">
-      <img src="${sandwich.url}" alt="Pizza">
-      <h3>${sandwich.name}</h3>
-      <p>${sandwich.price}</p>
+      <img src="${pizza.url}" alt="Pizza">
+      <h3>${pizza.name}</h3>
+      <p>${pizza.price}</p>
     </div>
             `
                 madarPizza.innerHTML = madarPizza.innerHTML + d
@@ -63,7 +63,7 @@ function loadsPizzas() {
 }
 
 loadsPizzas()
-
+loadsSandwiches()
 
 function loadsDesserts() {
     const xhrDesserts= new XMLHttpRequest()
