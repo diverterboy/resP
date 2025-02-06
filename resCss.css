@@ -20,4 +20,5 @@ body {
 }
 .restaurant-list li:hover {
     background-color: #e5533d;
+    transition: 2.9s;
 }
