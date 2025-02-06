@@ -12,16 +12,12 @@ function loadsSandwiches() {
             for (let i = 0; i < sandwichList.length; i++) {
                 let sandwich = sandwichList[i]
                 let d = `
-<div class="row" id="madar">
-<div class="col-lg-3 col-md-6">
-<div class="coffee_img"><img src="${sandwich.url}"></div>
-<h3 class="types_text">${sandwich.name}</h3>
-<p class="looking_text">${sandwich.price}</p>
-<div class="read_bt"><a href="#">Read More</a></div>
-</div>
- 
-</div>
-`
+                    <div class="menu-item">
+      <img src="${sandwich.url}" alt="Pizza">
+      <h3>${sandwich.name}</h3>
+      <p>${sandwich.price}</p>
+    </div>
+            `
                 madarSandwich.innerHTML = madarSandwich.innerHTML + d
 
             }
