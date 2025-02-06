@@ -34,6 +34,7 @@ const madarPizza = document.querySelector("#madarPizza")
 const madarDrinks = document.querySelector("#madarDrinks")
 const madarBurgers = document.querySelector("#madarBurgers")
 
+
 function loadsPizzas() {
     const xhrPizza = new XMLHttpRequest()
     xhrPizza.open("GET", "https://food.utotech.ir/getPizzas.php", true)
@@ -109,9 +110,6 @@ function loadsDesserts() {
     xhrDesserts.send()
 
 }
-
-
-
 function loadBurgers() {
     const xhrBurgers = new XMLHttpRequest()
     xhrBurgers.open("GET", "https://food.utotech.ir/getBurgers.php", true)
