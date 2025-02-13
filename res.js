@@ -30,3 +30,4 @@ function selectRestaurant(items){
     window.location.href = "index.html";
 }
 loadRestaurants()
+

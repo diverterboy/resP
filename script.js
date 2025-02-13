@@ -1,5 +1,6 @@
 import Foods from "./Foods.js";
 import CustomerOrder from "./CustomerOrder.js";
+import Order from "./Order.js";
 const madarSandwich = document.querySelector("#madarSandwich")
 const maderDesserts = document.querySelector("#maderDesserts")
 const madarPizza = document.querySelector("#madarPizza")
@@ -154,6 +155,3 @@ loadsPizzas(getUrls())
 loadsSandwiches(getUrls())
 loadDrinks(getUrls())
 loadsDesserts(getUrls())
-
-
-
