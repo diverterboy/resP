@@ -101,7 +101,7 @@ function loadDrinks(resName) {
     }
     xhrdrinks.send()
 
-}
+};
 function loadsDesserts(resName) {
     const xhrDesserts= new XMLHttpRequest()
     xhrDesserts.open("GET", "https://food.utotech.ir/"+resName+"/getDesserts.php", true)
@@ -128,6 +128,7 @@ function loadsDesserts(resName) {
 
 }
 function loadBurgers(resName) {
+
     const xhrBurgers = new XMLHttpRequest()
     xhrBurgers.open("GET", "https://food.utotech.ir/"+resName+"/getBurgers.php", true)
     xhrBurgers.onload = function () {
