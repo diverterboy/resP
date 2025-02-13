@@ -88,6 +88,7 @@ function loadDrinks(resName) {
                 let drink = drinksList[i]
                 let d = `
                     <div class="menu-item">
+                   
       <img src="${drink.url}" alt="Pizza">
       <h3>${drink.name}</h3>
       <p>${drink.price+"تومان"}</p>
