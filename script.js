@@ -1,4 +1,5 @@
 import Foods from "./Foods.js";
+import CustomerOrder from "./CustomerOrder.js";
 const madarSandwich = document.querySelector("#madarSandwich")
 const maderDesserts = document.querySelector("#maderDesserts")
 const madarPizza = document.querySelector("#madarPizza")
@@ -19,9 +20,6 @@ function getUrls(){
 
         }
     }
-
-
-
 function loadsSandwiches(resName) {
     const xhrSandwiches = new XMLHttpRequest()
     xhrSandwiches.open("Get", "https://food.utotech.ir/"+resName+"/getSandwiches.php", true)
@@ -36,7 +34,7 @@ function loadsSandwiches(resName) {
                     <div class="menu-item">
       <img src="${sandwich.url}" alt="Pizza">
       <h3>${sandwich.name}</h3>
-      <p>${sandwich.price}</p>
+      <p>${sandwich.price+"تومان"}</p>
     </div>
             `
                 madarSandwich.innerHTML = madarSandwich.innerHTML + d
@@ -63,7 +61,7 @@ function loadsPizzas(resName) {
                     <div class="menu-item">
       <img src="${pizza.url}" alt="Pizza">
       <h3>${pizza.name}</h3>
-      <p>${pizza.price}</p>
+      <p>${pizza.price+"تومان"}</p>
     </div>
             `
                 madarPizza.innerHTML = madarPizza.innerHTML + d
@@ -88,7 +86,7 @@ function loadDrinks(resName) {
                     <div class="menu-item">
       <img src="${drink.url}" alt="Pizza">
       <h3>${drink.name}</h3>
-      <p>${drink.price}</p>
+      <p>${drink.price+"تومان"}</p>
     </div>
             `
                 madarDrinks.innerHTML = madarDrinks.innerHTML + d
@@ -113,7 +111,7 @@ function loadsDesserts(resName) {
                     <div class="menu-item">
       <img src="${Desserts.url}" class="imgs" alt="Desserts">
       <h3>${Desserts.name}</h3>
-      <p>${Desserts.price}</p>
+      <p>${Desserts.price+"تومان"}</p>
     </div>
             `
                 maderDesserts.innerHTML = maderDesserts.innerHTML + d
@@ -138,7 +136,7 @@ function loadBurgers(resName) {
                     <div class="menu-item">
       <img src="${Burgers.url}" alt="Burgers">
       <h3>${Burgers.name}</h3>
-      <p>${Burgers.price}</p>
+      <p>${Burgers.price+"تومان"}</p>
     </div>
             `
                 madarBurgers.innerHTML = madarBurgers.innerHTML + d
