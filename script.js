@@ -8,6 +8,9 @@ const madarDrinks = document.querySelector("#madarDrinks")
 const madarBurgers = document.querySelector("#madarBurgers")
 const resName= localStorage.getItem("res")
 
+
+
+
 function getUrls(){
         switch (resName){
             case "پیتزا سی تو":
@@ -148,6 +151,8 @@ function loadBurgers(resName) {
     xhrBurgers.send()
 
 }
+
+
 
 
 loadBurgers(getUrls())
